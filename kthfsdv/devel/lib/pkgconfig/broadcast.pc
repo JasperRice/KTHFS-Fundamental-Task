@@ -1,0 +1,1 @@
+/home/s/i/sifanj/kthfsdv/devel/.private/broadcast/lib/pkgconfig/broadcast.pc

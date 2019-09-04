@@ -1,0 +1,5 @@
+exc1/package1
+/home/s/i/sifanj/kthfsdv/devel/.private/package1/cmake.lock /home/s/i/sifanj/kthfsdv/devel/./cmake.lock
+/home/s/i/sifanj/kthfsdv/devel/.private/package1/lib/pkgconfig/package1.pc /home/s/i/sifanj/kthfsdv/devel/lib/pkgconfig/package1.pc
+/home/s/i/sifanj/kthfsdv/devel/.private/package1/share/package1/cmake/package1Config.cmake /home/s/i/sifanj/kthfsdv/devel/share/package1/cmake/package1Config.cmake
+/home/s/i/sifanj/kthfsdv/devel/.private/package1/share/package1/cmake/package1Config-version.cmake /home/s/i/sifanj/kthfsdv/devel/share/package1/cmake/package1Config-version.cmake

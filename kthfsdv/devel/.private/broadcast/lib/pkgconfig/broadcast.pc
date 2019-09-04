@@ -1,0 +1,8 @@
+prefix=/home/s/i/sifanj/kthfsdv/devel/.private/broadcast
+
+Name: broadcast
+Description: Description of broadcast
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/s/i/sifanj/kthfsdv/devel/.private/broadcast/lib 
+Requires: 

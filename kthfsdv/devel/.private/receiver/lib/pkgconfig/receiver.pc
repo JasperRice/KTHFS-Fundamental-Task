@@ -1,0 +1,8 @@
+prefix=/home/s/i/sifanj/kthfsdv/devel/.private/receiver
+
+Name: receiver
+Description: Description of receiver
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/s/i/sifanj/kthfsdv/devel/.private/receiver/lib 
+Requires: 

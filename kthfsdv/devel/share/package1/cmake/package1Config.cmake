@@ -1,0 +1,1 @@
+/home/s/i/sifanj/kthfsdv/devel/.private/package1/share/package1/cmake/package1Config.cmake

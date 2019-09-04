@@ -1,0 +1,1 @@
+/home/s/i/sifanj/kthfsdv/devel/.private/receiver/share/receiver/cmake/receiverConfig.cmake

@@ -1,0 +1,1 @@
+/home/s/i/sifanj/kthfsdv/devel/.private/package1/lib/pkgconfig/package1.pc

@@ -1,0 +1,8 @@
+prefix=/home/s/i/sifanj/kthfsdv/install
+
+Name: package1
+Description: Description of package1
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/s/i/sifanj/kthfsdv/install/lib 
+Requires: 
