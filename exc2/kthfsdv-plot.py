@@ -6,19 +6,39 @@ import Tkinter as tk
 # import time
 # import threading
 
-class kthfsdv_exc2:
+from matplotlib import style
+style.use("ggplot")
+
+
+class kthfsdv_exc2(tk.Tk):
     PERIODIC_INTERVAL = 1
-    n = 200
-    t = 0
+    n = 100 # The maxlimum number of points
 
     fig = plt.figure()
-    ax = fig.add_subplot(1, 1, 1)
+    axl = fig.add_subplot(1, 1, 1)
 
     def __init__(self):
         print("Test: Class built.")
+
+        tk.Tk.__init__(self)
+        container = tk.Frame(self)
+        container.pack(side="top", fill="both", expand=True)
+        container.grid_rowconfigure(0, weight=1)
+        container.grid_columnconfigure(0, weight=1)
+        self.frames = {}
+        frame = StartPage(container, self)
+        self.frames[StartPage] = frame
+        frame.grid(row=0, column=0, sticky="nsew")
+        self.show_frame(StartPage)
+
+        self.t = 0
         self.dt = self.PERIODIC_INTERVAL / self.n
         self.ts = []
         self.vs = []
+
+    def show_frame(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
 
     def _h_(self):
         return 3 * np.pi * np.exp(-self._lambda_())
@@ -33,18 +53,18 @@ class kthfsdv_exc2:
         self.vs.append(self._h_())
         self.t += self.dt
 
-        # Limit lists to MAX_POINTS items
+        # Limit lists to Max_POINTS items
         self.ts = self.ts[-self.n:]
         self.vs = self.vs[-self.n:]
 
         # Plot
-        self.ax.clear()
-        self.ax.plot(self.ts, self.vs)
+        self.axl.clear()
+        self.axl.plot(self.ts, self.vs)
 
     def _plot_(self):
-        animate = animation.FuncAnimation(self.fig,
+        ani = animation.FuncAnimation(self.fig,
                                           self._update_,
-                                          fargs=self,
+                                          # fargs=self,
                                           interval=200)
         plt.title("Data Visualization")
         plt.xlabel("Time")
@@ -52,6 +72,16 @@ class kthfsdv_exc2:
         plt.grid()
         plt.show()
 
+
+class StartPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Start Page")
+        label.pack(padx=10, pady=10)
+
+
 if __name__ == '__main__':
     A = kthfsdv_exc2()
+    print(A.ts)
     A._plot_()
+    A.mainloop()

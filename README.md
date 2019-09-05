@@ -1,2 +1,4 @@
-# KTHFS-DV
-KTH Formula Student - Exercis
+# KTH Formula Student - Exercises
+## Exercise 1
+
+## Exercise 2
