@@ -1,10 +1,10 @@
 # KTH Formula Student - Exercises
+> Enviroment: Ubuntu 18.04 + Python 2.7 + ROS Melodic Morenia
 ## [Exercise 1 - Network](/kthfsdv/src/exc1)
 ### Function
 - Create **nodeA** to publish specific message to topic **/Jiang** at rate of 20 Hz.
 - Create **nodeB** to subscribe the message from topic **/Jiang** and published the divided message (by 0.15) to topic **/kthfs/result**.
 ### Setup
-> Enviroment: Ubuntu 18.04 + ROS Melodic Morenia + Python
 - In the first *Terminal*: run `roscore`.
 - In the second *Terminal*: run `rosrun receiver subscriber.py`
 - In the third *Terminal*: run `broadcast publisher.py`
