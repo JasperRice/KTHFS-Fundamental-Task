@@ -22,8 +22,10 @@
 
 ## [Exercise 2 - Visualization](/exc2)
 > Enviroment: Ubuntu 18.04 + Python 2.7 (matplotlib, numpy, Tkinter)
-> - Unable to update plot by `FuncAnimation` if using the object function from `class`. Two ways:
->   - [x]
+> **Problem**:
+> - Unable to update plot by `FuncAnimation` if using the object function from `class`. Two ways to solve the problem:
+>   -[x] A
+>   -[] B
 ### Function
 ### Setup
 ### Test & Result
