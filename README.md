@@ -21,11 +21,20 @@
 </p>
 
 ## [Exercise 2 - Visualization](/exc2)
-> Enviroment: Ubuntu 18.04 + Python 2.7 (matplotlib, numpy, Tkinter)
-> Problem:
-> - Unable to update plot by `FuncAnimation` if using the object function from `class`. Two ways to solve the problem:
->   -[x] A
->   -[ ] B
+> Enviroment: Ubuntu 18.04 + Python 2.7
 ### Function
+Using an object-oriented programming approach to generate plotting data, scales that visualise non-redundant information about the given function.
+
+Outperforming features:
+- [x] "Real-time'/live updated data visualisation.
+- [ ] Graphical user interface (GUI):
+    - [ ] adjusting axis with slider (zoom functionality);
+    - [ ] manually adjusting the axis based on current min max values;
+    - [x] adding a grid;
+    - [x] add start, stop and reset button to reinitialise data collection;
+    - [x] add an edit field to enter experiment name;
+    - [x] add save button to store data as csv with date, time and edit field content.
+- [ ] Tikz implementation, to allow export as LaTeX code with minimal adjustments.
 ### Setup
+Run `python kthfsdv_exc2.py` in *Terminal*.
 ### Test & Result
