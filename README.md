@@ -1,6 +1,3 @@
-<p align="center">
-    <img src="/KTHFS.png" alt>
-</p>
 # KTH Formula Student - Exercises
 > Enviroment: Ubuntu 18.04 + Python 2.7 + ROS Melodic Morenia
 ## [Exercise 1 - Network](/kthfsdv/src/exc1)
