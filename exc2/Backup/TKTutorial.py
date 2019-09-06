@@ -16,8 +16,8 @@ from matplotlib import style
 style.use("ggplot")
 
 
-f = Figure(figsize=(8, 8), dpi=100)
-a = f.add_subplot(111)
+fig = Figure(figsize=(8, 8), dpi=100)
+a = fig.add_subplot(111)
 
 
 def animate(i):
@@ -33,6 +33,7 @@ def animate(i):
 
     a.clear()
     a.plot(xList, yList)
+    print(xList)
 
 
 class Top(tk.Tk):
@@ -118,7 +119,7 @@ class PageGraph(tk.Frame):
                             command=lambda:controller.show_frame(StartPage))
         button1.pack()
 
-        canvas = FigureCanvasTkAgg(f, self)
+        canvas = FigureCanvasTkAgg(fig, self)
         canvas.draw()
         canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
@@ -129,5 +130,5 @@ class PageGraph(tk.Frame):
 
 if __name__ == '__main__':
     A = Top()
-    ani = animation.FuncAnimation(f, animate, interval=1000)
+    ani = animation.FuncAnimation(fig, animate, interval=1000)
     A.mainloop()
