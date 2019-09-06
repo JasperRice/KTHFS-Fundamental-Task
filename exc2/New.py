@@ -9,6 +9,7 @@ matplotlib.use("TkAgg")
 style.use("ggplot")
 
 import numpy as np
+import pandas as pd
 import threading
 import Tkinter as tk
 import ttk
@@ -17,6 +18,7 @@ import ttk
 class exc2():
     T = 1.0
     N = 100
+    NAME = ""
 
     def __init__(self):
         self.ts = []
@@ -50,6 +52,9 @@ class exc2():
                 axl.scatter(self.ts, self.hs, marker=".")
                 canvas.draw()
 
+        def name(Name):
+            self.Name = Name
+
         def start():
             self.STATE = True
             threading.Thread(target=animate).start()
@@ -64,6 +69,8 @@ class exc2():
             threading.Thread(target=animate).start()
 
         def save():
+            df = pd.DataFrame({'Time':self.ts, 'H':self.hs})
+            df.to_csv("data.csv")
 
 
         fig = Figure(figsize=(8, 8), dpi=100)
@@ -76,6 +83,12 @@ class exc2():
         root.minsize(800, 800)
         root.wm_title("KTHFS: Data Visualization")
         # root.iconbitmap("DV.ico")
+
+        experiment_name = ttk.Entry(root)
+        experiment_name.grid(row=0, columnspan=3)
+
+        name_button = ttk.Button(root, text="Enter Experiment Name")
+        name_button.grid(row=0, column=3)
 
         start_button = ttk.Button(root, text="Start", command=start)
         start_button.grid(row=0, column=0)
