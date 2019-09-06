@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,8 +7,26 @@ import Tkinter as tk
 # import time
 # import threading
 
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+from matplotlib.figure import Figure
 from matplotlib import style
 style.use("ggplot")
+
+
+# Called by FuncAnimation for Live Plotting
+def animate(i, ts, vs, t):
+    # Calculate and update value
+    ts.append(self.t)
+    vs.append(self._h_())
+    self.t += self.dt
+
+    # Limit lists to Max_POINTS items
+    self.ts = self.ts[-self.n:]
+    self.vs = self.vs[-self.n:]
+
+    # Plot
+    self.axl.clear()
+    self.axl.plot(self.ts, self.vs)
 
 
 class kthfsdv_exc2(tk.Tk):
@@ -50,6 +69,7 @@ class kthfsdv_exc2(tk.Tk):
     def _lambda_(self):
         return 5 * np.sin(2*np.pi*1*self.t)
 
+
     # Called periodically by FuncAnimation
     def _update_(self, i):
         # Calculate and update value
@@ -77,30 +97,47 @@ class kthfsdv_exc2(tk.Tk):
         plt.show()
 
 
-class StartPage(tk.Frame):
+# Graphic User Interface
+class GUI(tk.Tk):
+    def __init__(self, *args, **kwargs):
+        tk.Tk.__init__(self, *args, **kwargs)
+        tk.Tk.wm_title(self, "KTHFS: Data Visualization")
+
+        container = tk.Frame(self)
+        container.pack(side="top", fill="both", expand=True)
+        container.grid_columnconfigure(0, weight=1)
+        container.grid_rowconfigure(0, weight=1)
+
+        self.frames = {}
+        for F in (GraphPage):
+            frame = F(container, self)
+            self.frames[F] = frame
+            frame.grid(row=0, column=0, sticky="nsew")
+
+        self.show_frame(Graph)
+
+    def show_frame(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
+
+
+# Page of the Graph
+class GraphPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Start Page")
-        label.pack(padx=10, pady=10)
+        f = Figure(figsize=(5, 5), dpi=300)
+        a = f.add_subplot(111)
+        a.plot([1,2,3,4,5,6,7,8], [1,2,3,4,5,6,7,8])
 
-        button1 = tk.Button(self, text="Visit Page 1",
-                            command=lambda:controller.show_frame(PageOne))
-        button1.pack()
+        canvas = FigureCanvasTkAgg(f, self)
+        canvas.draw()
+        canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-
-class PageOne(tk.Frame):
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Page 1")
-        label.pack(padx=10, pady=10)
-
-        button2 = tk.Button(self, text="Back to Home",
-                            command=lambda:controller.show_frame(StartPage))
-        button2.pack()
+        toolbar = NavigationToolbar2Tk(canvas, self)
+        toolbar.update
+        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
 if __name__ == '__main__':
-    A = kthfsdv_exc2()
-    print(A.ts)
-    A._plot_()
+    A = GUI()
     A.mainloop()

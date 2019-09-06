@@ -1,6 +1,6 @@
 # KTH Formula Student - Exercises
-> Enviroment: Ubuntu 18.04 + Python 2.7 + ROS Melodic Morenia
 ## [Exercise 1 - Network](/kthfsdv/src/exc1)
+> Enviroment: Ubuntu 18.04 + Python 2.7 + ROS Melodic Morenia
 ### Function
 - Create **nodeA** to publish specific message to topic **/Jiang** at rate of 20 Hz.
 - Create **nodeB** to subscribe the message from topic **/Jiang** and published the divided message (by 0.15) to topic **/kthfs/result**.
@@ -21,6 +21,9 @@
 </p>
 
 ## [Exercise 2 - Visualization](/exc2)
+> Enviroment: Ubuntu 18.04 + Python 2.7 (matplotlib, numpy, Tkinter)
+> - Unable to update plot by `FuncAnimation` if using the object function from `class`. Two ways:
+>   - [x]
 ### Function
 ### Setup
 ### Test & Result
