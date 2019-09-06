@@ -38,3 +38,11 @@ Outperforming features:
 ### Setup
 Run `python kthfsdv_exc2.py` in *Terminal*.
 ### Test & Result
+<b>Start</b>
+![img](https://github.com/JasperRice/KTHFS-DV/blob/master/exc2/start.gif)
+
+<b>Stop & Reset</b>
+![img](https://github.com/JasperRice/KTHFS-DV/blob/master/exc2/stop_reset.gif)
+
+<b>Experiment Name & Save Data</b>
+![img](https://github.com/JasperRice/KTHFS-DV/blob/master/exc2/name_save.gif)
