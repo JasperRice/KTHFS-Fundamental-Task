@@ -1,3 +1,6 @@
+<p align="center">
+    <img src="/KTHFS.png" alt>
+</p>
 # KTH Formula Student - Exercises
 > Enviroment: Ubuntu 18.04 + Python 2.7 + ROS Melodic Morenia
 ## [Exercise 1 - Network](/kthfsdv/src/exc1)
@@ -18,7 +21,7 @@
 - Run `rqt_graph` to visualize the nodes and topics.
 <p align="center">
     <img src="/kthfsdv/src/rosgraph.png" alt>
-</p> 
+</p>
 
 ## [Exercise 2 - Visualization](/exc2)
 ### Function
